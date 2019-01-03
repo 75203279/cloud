@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+pring:
+  cloud:
+    gateway:
+      routes:
+      - id: host_route
+        uri: http://www.baidu.com:80
+        predicates:
+        - Path=/w1/**
+        filters:
+#        - StripPrefix=1
+      - id: host_route
+        uri: http://localhost:8080
+        predicates:
+        - Path=/w2
